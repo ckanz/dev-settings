@@ -19,7 +19,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'syntastic'
 NeoBundle 'leafgarland/typescript-vim'
+
 call neobundle#end()
 
 " Required:
@@ -30,10 +33,10 @@ filetype plugin indent on
 NeoBundleCheck
 
 set nocompatible
- 
+
 filetype indent plugin on
 syntax on
- 
+
 set hidden
 set wildmenu
 set showcmd
@@ -63,3 +66,4 @@ set backupdir=/private/tmp
 set dir=/private/tmp
 set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,space:·
+set cursorline
