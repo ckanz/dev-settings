@@ -22,6 +22,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'syntastic'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'maksimr/vim-jsbeautify'
 
 call neobundle#end()
 
@@ -65,8 +67,19 @@ set backup
 set backupdir=/private/tmp
 set dir=/private/tmp
 set list
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,space:·
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set cursorline
+set tabstop=8
+set expandtab
+set autoindent
+set smartindent
+set statusline+=%F
+
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 let g:syntastic_javascript_checkers = ['eslint', 'jshint']
 set statusline+=%#warningmsg#
