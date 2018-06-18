@@ -2,7 +2,7 @@
 if 0 | endif
 
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 " Required:
@@ -19,11 +19,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'syntastic'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'ap/vim-css-color'
+NeoBundle 'posva/vim-vue'
 
 call neobundle#end()
 
@@ -73,20 +75,24 @@ set tabstop=8
 set expandtab
 set autoindent
 set smartindent
-set statusline+=%F
+set statusline+=%Fr
+set paste
+set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
 
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+" autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+" au BufNewFile,BufRead *.vue,*.wpy setf vue
 
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+
+" TODO: make linters work for typescript and vim
+let g:syntastic_typescript_checkers = []
+let g:syntastic_vue_checkers = []
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_debug = 0
