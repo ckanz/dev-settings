@@ -1,0 +1,10 @@
+[user]
+name = XXX
+email = XXX
+[core]
+# excludesfile = /Users/XXX/.gitignore_global
+[credential]
+helper = osxkeychain
+[include]
+path = gitalias.txt
+
