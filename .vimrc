@@ -20,12 +20,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: You don't set neobundle setting in .gvimrc!
 
 NeoBundle 'syntastic'
-NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'ap/vim-css-color'
-NeoBundle 'posva/vim-vue'
+NeoBundle 'airblade/vim-gitgutter'
 
 call neobundle#end()
 
@@ -48,6 +46,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set backspace=indent,eol,start
+set expandtab
 set autoindent
 set nostartofline
 set ruler
@@ -78,21 +77,25 @@ set smartindent
 set statusline+=%Fr
 set paste
 set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
-
-" autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
-" au BufNewFile,BufRead *.vue,*.wpy setf vue
+set spell spelllang=en_us
+set nospell
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_json_checkers = ['jsonlint']
 
-" TODO: make linters work for typescript and vim
-let g:syntastic_typescript_checkers = []
-let g:syntastic_vue_checkers = []
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_debug = 0
+
+
+tnoremap <Esc> <C-\><C-n>
+
+autocmd VimEnter * GitGutterLineHighlightsEnable
+autocmd VimEnter * GitGutterEnable
+autocmd VimEnter * GitGutterSignsEnable
