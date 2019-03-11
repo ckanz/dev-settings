@@ -1,2 +1,2 @@
-# vimrc-file
-Repo containing my vim settings
+# dev-settings
+Repo containing my dev settings for MacOS

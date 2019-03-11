@@ -23,9 +23,9 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 curl https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt -o ~/gitalias.txt
 
 echo "Updating npm & packages..."
-npm install -g npm@latest
-npm outdated -g
-npm update -g
+npm install -g npm@latest --verbose
+npm outdated -g --verbose
+npm update -g --verbose
 
 echo "Done."
 date

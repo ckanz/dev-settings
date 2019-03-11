@@ -24,6 +24,9 @@ NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'ap/vim-css-color'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'junegunn/fzf'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'isRuslan/vim-es6'
 
 call neobundle#end()
 
@@ -96,6 +99,6 @@ let g:syntastic_debug = 0
 
 tnoremap <Esc> <C-\><C-n>
 
-autocmd VimEnter * GitGutterLineHighlightsEnable
 autocmd VimEnter * GitGutterEnable
 autocmd VimEnter * GitGutterSignsEnable
+autocmd BufWritePost * GitGutter
