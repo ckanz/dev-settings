@@ -27,5 +27,10 @@ npm install -g npm@latest --verbose
 npm outdated -g --verbose
 npm update -g --verbose
 
+echo "Updating bash, vim and tmux settings"
+cp .vimrc ~/.vimrc
+cp .tmux.conf ~/.tmux.conf
+cp .bash_profile ~/.bash_profile
+
 echo "Done."
 date
