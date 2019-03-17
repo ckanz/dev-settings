@@ -15,18 +15,22 @@ echo ""
 
 brew update
 brew upgrade
-brew prune
-brew cleanup
+brew cleanup --prune-prefix
 brew doctor
 
 echo "Updating Get settings..."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-curl -O https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt ~/gitalias.txt
+curl https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt -o ~/gitalias.txt
 
 echo "Updating npm & packages..."
-npm install -g npm@latest
-npm outdated -g
-npm update -g
+npm install -g npm@latest --verbose
+npm outdated -g --verbose
+npm update -g --verbose
+
+echo "Updating bash, vim and tmux settings"
+cp .vimrc ~/.vimrc
+cp .tmux.conf ~/.tmux.conf
+cp .bash_profile ~/.bash_profile
 
 echo "Done."
 date
