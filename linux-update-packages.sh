@@ -10,8 +10,8 @@ echo "
 date
 
 echo "Updating packages..."
-sudo apt update
-sudo apt upgrade
+sudo apt --assume-yes  update
+sudo apt --assume-yes upgrade
 
 echo "Updating Git settings..."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
