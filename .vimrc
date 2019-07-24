@@ -27,6 +27,9 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'junegunn/fzf'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'isRuslan/vim-es6'
+NeoBundle 'tikhomirov/vim-glsl'
+NeoBundle 'mxw/vim-jsx'
+NeoBundle 'pangloss/vim-javascript'
 
 call neobundle#end()
 
