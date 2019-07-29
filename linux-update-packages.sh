@@ -9,23 +9,21 @@ echo "
 "
 date
 
-echo "Updating Homebrew packages..."
-brew ls
-echo ""
+echo "Updating packages..."
+sudo apt --assume-yes  update
+sudo apt --assume-yes upgrade
 
-brew update
-brew upgrade
-brew cleanup --prune-prefix
-brew doctor
-
-echo "Updating Get settings..."
+echo "Updating Git settings..."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 curl https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt -o ~/gitalias.txt
 
 echo "Updating npm & packages..."
-npm install -g npm@latest --verbose
-npm outdated -g --verbose
-npm update -g --verbose
+npm install -g npm@latest
+npm outdated -g
+npm update -g
+
+git fetch
+git pull
 
 echo "Updating bash, vim and tmux settings"
 cp .vimrc ~/.vimrc
