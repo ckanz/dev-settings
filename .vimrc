@@ -19,7 +19,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-NeoBundle 'syntastic'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'ap/vim-css-color'
@@ -30,6 +29,7 @@ NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'tikhomirov/vim-glsl'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'dense-analysis/ale'
 
 call neobundle#end()
 
@@ -86,19 +86,10 @@ set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
 set spell spelllang=en_us
 set nospell
 
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_json_checkers = ['jsonlint']
-
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_debug = 0
-
+let g:ale_linters = {
+\  'javascript': ['standard'],
+\}
+let g:ale_lint_on_save = 1
 
 tnoremap <Esc> <C-\><C-n>
 
