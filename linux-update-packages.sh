@@ -18,9 +18,9 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 curl https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt -o ~/gitalias.txt
 
 echo "Updating npm & packages..."
-npm install -g npm@latest
-npm outdated -g
-npm update -g
+sudo npm install -g npm@latest
+sudo npm outdated -g
+sudo npm update -g
 
 git fetch
 git pull
