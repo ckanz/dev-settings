@@ -87,6 +87,7 @@ set paste
 set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
 set spell spelllang=en_us
 set nospell
+set t_Co=256
 
 let g:lightline = {
 \ 'active': {
