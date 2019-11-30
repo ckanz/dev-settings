@@ -32,6 +32,8 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'dense-analysis/ale'
 NeoBundle 'maximbaz/lightline-ale'
 NeoBundle 'itchyny/vim-gitbranch'
+NeoBundle 'frazrepo/vim-rainbow'
+NeoBundle 'taglist.vim'
 
 call neobundle#end()
 
@@ -73,8 +75,8 @@ set expandtab
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 set backup
-set backupdir=/private/tmp
-set dir=/private/tmp
+set backupdir=/tmp
+set dir=/tmp
 set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set cursorline
