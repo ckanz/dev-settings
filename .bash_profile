@@ -9,3 +9,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 alias nts="tmux new -t"
+
+vifzf() {
+  nvim -o `FZF -q "$1"`
+}
