@@ -53,7 +53,7 @@ set hidden
 set wildmenu
 set showcmd
 set hlsearch
-set ignorecase
+" set ignorecase
 set smartcase
 set backspace=indent,eol,start
 set expandtab
@@ -102,6 +102,16 @@ let g:lightline = {
 \     [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]
 \   ]
 \ },
+\ 'inactive': {
+\   'left': [ [ 'mode', 'paste' ],
+\     [ 'gitbranch' ],
+\     [ 'readonly', 'absolutepath', 'modified' ] ],
+\   'right': [ [ 'lineinfo' ],
+\     [ 'percent' ],
+\     [ 'fileformat', 'fileencoding', 'filetype' ],
+\     [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]
+\   ]
+\ },
 \ 'component_function': {
 \   'gitbranch': 'gitbranch#name'
 \ },
@@ -139,3 +149,4 @@ tnoremap <Esc> <C-\><C-n>
 autocmd VimEnter * GitGutterEnable
 autocmd VimEnter * GitGutterSignsEnable
 autocmd BufWritePost * GitGutter
+nnoremap [t :GitGutterLineHighlightsToggle<CR>
