@@ -1,0 +1,66 @@
+general {
+  output_format = "i3bar"
+  colors = false
+  markup = pango
+  interval = 5
+  color_good = '#2f343f'
+  color_degraded = '#ebcb8b'
+  color_bad = '#ba5e57'
+}
+
+order += "load"
+order += "cpu_temperature 0"
+order += "disk /"
+order += "volume master"
+order += "ethernet enp1s0"
+order += "wireless wlp4s0"
+order += "battery 0"
+order += "tztime local"
+
+load {
+  format = "CPU %5min"
+}
+
+cpu_temperature 0 {
+  format = "CPU temp %degrees °C"
+  path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+disk "/" {
+  format = "Disk %free Free"
+}
+
+ethernet enp1s0 {
+        format_up = "ethernet enp1s0  %ip"
+        format_down = "ethernet enp1s0 Disconnected"
+}
+
+wireless wlp4s0 {
+        format_up = "wireless wlp4s0 %essid"
+        format_down = "wireless wlp4s0 Disconnected"
+}
+
+volume master {
+        format = "Audio Volume %volume"
+        format_muted = "Audio Muted"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery 0 {
+        last_full_capacity = true
+        format = "Battery %status %percentage"
+        format_down = "No Battery"
+        status_chr = "Charging"
+        status_bat = "Battery"
+        status_unk = "Unknown"
+        status_full = "Charged"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+tztime local {
+  format = "%time"
+  format_time = "%a %-d %b %H:%M"
+}
