@@ -21,6 +21,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'preservim/nerdtree'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'ryanoasis/vim-devicons'
+" NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
 NeoBundle 'ap/vim-css-color'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'junegunn/fzf'
@@ -85,7 +89,6 @@ set expandtab
 set autoindent
 set smartindent
 set statusline+=%Fr
-set paste
 set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
 set spell spelllang=en_us
 set nospell
@@ -150,3 +153,10 @@ autocmd VimEnter * GitGutterEnable
 autocmd VimEnter * GitGutterSignsEnable
 autocmd BufWritePost * GitGutter
 nnoremap [t :GitGutterLineHighlightsToggle<CR>
+
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufWinEnter * silent NERDTreeMirror
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+let NERDTreeShowHidden=1
