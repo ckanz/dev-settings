@@ -18,7 +18,7 @@ brew upgrade
 brew cleanup --prune-prefix
 brew doctor
 
-echo "Updating Get settings..."
+echo "Updating Git settings..."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 curl https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt -o ~/gitalias.txt
 
