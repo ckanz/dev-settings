@@ -24,7 +24,6 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'preservim/nerdtree'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'ryanoasis/vim-devicons'
-" NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
 NeoBundle 'ap/vim-css-color'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'junegunn/fzf'
@@ -37,7 +36,9 @@ NeoBundle 'dense-analysis/ale'
 NeoBundle 'maximbaz/lightline-ale'
 NeoBundle 'itchyny/vim-gitbranch'
 NeoBundle 'frazrepo/vim-rainbow'
-NeoBundle 'taglist.vim'
+" NeoBundle 'yegappan/taglist'
+" NeoBundle 'preservim/tagbar'
+NeoBundle 'szw/vim-g'
 
 call neobundle#end()
 
