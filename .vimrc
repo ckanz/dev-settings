@@ -37,8 +37,6 @@ NeoBundle 'dense-analysis/ale'
 NeoBundle 'maximbaz/lightline-ale'
 NeoBundle 'itchyny/vim-gitbranch'
 NeoBundle 'frazrepo/vim-rainbow'
-" NeoBundle 'yegappan/taglist'
-NeoBundle 'preservim/tagbar'
 NeoBundle 'szw/vim-g'
 NeoBundle 'mbbill/undotree'
 
@@ -157,9 +155,4 @@ autocmd VimEnter * GitGutterSignsEnable
 autocmd BufWritePost * GitGutter
 nnoremap [t :GitGutterLineHighlightsToggle<CR>
 
-autocmd VimEnter * NERDTree | wincmd p
-autocmd BufWinEnter * silent NERDTreeMirror
-" Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
 let NERDTreeShowHidden=1
