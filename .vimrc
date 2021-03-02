@@ -27,6 +27,7 @@ NeoBundle 'ryanoasis/vim-devicons'
 NeoBundle 'ap/vim-css-color'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'junegunn/fzf'
+NeoBundle 'junegunn/fzf.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'tikhomirov/vim-glsl'
@@ -37,8 +38,9 @@ NeoBundle 'maximbaz/lightline-ale'
 NeoBundle 'itchyny/vim-gitbranch'
 NeoBundle 'frazrepo/vim-rainbow'
 " NeoBundle 'yegappan/taglist'
-" NeoBundle 'preservim/tagbar'
+NeoBundle 'preservim/tagbar'
 NeoBundle 'szw/vim-g'
+NeoBundle 'mbbill/undotree'
 
 call neobundle#end()
 
