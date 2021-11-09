@@ -22,6 +22,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'preservim/nerdtree'
+NeoBundle 'preservim/tagbar'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'ryanoasis/vim-devicons'
 NeoBundle 'ap/vim-css-color'
@@ -39,6 +40,7 @@ NeoBundle 'itchyny/vim-gitbranch'
 NeoBundle 'frazrepo/vim-rainbow'
 NeoBundle 'szw/vim-g'
 NeoBundle 'mbbill/undotree'
+NeoBundle 'carlosrocha/vim-chrome-devtools', { 'do': 'bash install.sh' }
 
 call neobundle#end()
 
