@@ -41,6 +41,8 @@ NeoBundle 'frazrepo/vim-rainbow'
 NeoBundle 'szw/vim-g'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'carlosrocha/vim-chrome-devtools', { 'do': 'bash install.sh' }
+NeoBundle 'tpope/vim-obsession'
+NeoBundle 'ruanyl/vim-gh-line'
 
 call neobundle#end()
 
@@ -91,8 +93,8 @@ set tabstop=8
 set expandtab
 set autoindent
 set smartindent
-set statusline+=%Fr
 set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
+set statusline+=%Fr
 set spell spelllang=en_us
 set nospell
 set t_Co=256
@@ -101,7 +103,8 @@ let g:lightline = {
 \ 'active': {
 \   'left': [ [ 'mode', 'paste' ],
 \     [ 'gitbranch' ],
-\     [ 'readonly', 'absolutepath', 'modified' ] ],
+\     [ 'readonly', 'absolutepath', 'modified' ],
+\     [ '%{ObsessionStatus()}' ] ],
 \   'right': [ [ 'lineinfo' ],
 \     [ 'percent' ],
 \     [ 'fileformat', 'fileencoding', 'filetype' ],
@@ -111,7 +114,8 @@ let g:lightline = {
 \ 'inactive': {
 \   'left': [ [ 'mode', 'paste' ],
 \     [ 'gitbranch' ],
-\     [ 'readonly', 'absolutepath', 'modified' ] ],
+\     [ 'readonly', 'absolutepath', 'modified' ],
+\     [ '%{ObsessionStatus()}' ] ],
 \   'right': [ [ 'lineinfo' ],
 \     [ 'percent' ],
 \     [ 'fileformat', 'fileencoding', 'filetype' ],
@@ -141,13 +145,15 @@ let g:lightline.component_type = {
 \ }
 
 let g:ale_linters = {
-\ 'javascript': ['standard']
+\ 'javascript': ['standard'],
+\ 'typescript': ['tslint']
 \}
 let g:ale_fixers = {
-\ 'javascript': ['standard']
+\ 'javascript': ['standard'],
+\ 'typescript': ['tslint']
 \}
 let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_completion_enabled = 1
 
 tnoremap <Esc> <C-\><C-n>
